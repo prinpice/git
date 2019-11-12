@@ -1,5 +1,13 @@
 # git
 
+* (분산)버전 관리 시스템
+* 개발자 linus forvalds : 리눅스, git - gis linus Tovalds on git
+* 코드의 History를 관리하는 도구
+* 개발된 과정과 역사를 볼 수 있으며, 프로젝트의 이전 버전을 복원하고 변경 사항을 비교, 분석 및 병합도 가능
+* git을 기반으로(hosting) 한 서비스 : Github(MS에 인수됨), Gitlab, GitKraken, GitBash
+* 디렉토리(Directory) 단위로 관리-어떤 폴더에서 git을 생성하는지가 중요cd
+* 스냅샷을 찍어주지 않음
+
 ## 목록
 
 * 명령어
@@ -26,6 +34,39 @@
   * rm 
 * pwd : 현재있는 폴더의 주소 출력
 * reset : add한 내용을 취소함
+* cat [파일 명] : 해당 파일의 문서내용 보기
+* code [위치] : 원하는 위치에서 mscode를 시작함(mscode 설치되어있을 시)
+  * code . : 현재 위치에서 mscode를 실행함
+
+
+
+## git 명령어
+
+* git init : 현재 폴더 기준으로 버전관리(선언, 초기화)
+* git status : 현재상태(버전 등)
+* git add [파일/폴더명] : 커밋할 목록에 추가/ 파일이 삭제된 경우 삭제된 내용을 저장
+  * git add . : 현재 폴더의 모든 내용을 추가
+  * git add --update : 추적하고 있는 파일만 추가
+* git rm --cached [파일명] : 추적 중지(add 취소) / 파일은 그대로 보존됨
+  * git rm [파일명] : 파일이 삭제된 경우 삭제된 것을 그대로 적용
+* git commit : 커밋(create a snapshot) 만들기
+  * git commit -m "[커밋메세지]" : 커밋메세지 작성
+  * git commit --ament -m "[수정된 커밋 메세지]" : 커밋 메세지 수정
+* git checkout -- [파일명] : 삭제된 파일 되돌리기
+* git push : 현재까지의 역사(commits)가 기록되어 있는 곳에 새로 생성한 커밋을 반영하기
+  * git push origin master : origin이라는 이름을 가진 master branch에 push함
+  * git push origin :test_branch : test_branch라는 이름을 가진 remote branch 삭제
+* git diff : 무엇을 수정했는지 확인
+* git config : 환경설정
+  * git config --global user.email "[이메일]" : 이메일 지정
+  * git config --global user.name "[사용자 이름]" : 사용자 이름 지정
+  * --global : 전역으로 사용
+* git log : 저장소의 commit history를 시간순으로 보여줌
+* git remote : 현재 프로젝트에 등록된 리모트 저장소 확인
+  * git remote -v : 리모트 저장소의 단축이름과 url확인
+  * git remote add [단축이름] [url] : 리모트 저장소 추가
+  * git remote update : 원격저장소의 정보를 업데이트(fetch)함
+  * git remote remove origin : 주소를(잘못 입력했을 경우) 삭제함
 
 
 
