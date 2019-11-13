@@ -111,6 +111,7 @@
 * git checkout
   * git checkout [branch명] : 원하는 branch로 이동
   * git checkout -- [파일명] : 삭제된 파일 되돌리기
+* git clone [주소] : 해당 주소로부터 파일 또는 폴더를 복사해서 가져옴 & 해당 주소와 연결
 * git commit : 커밋(create a snapshot) 만들기
   * git commit -m "[커밋메세지]" : 커밋메세지 작성
   * git commit --ament -m "[수정된 커밋 메세지]" : 커밋 메세지 수정
@@ -123,11 +124,15 @@
 * git log : 저장소의 commit history를 시간순으로 보여줌
 * git merge
   * git merge [합치고자 하는 branch명] : 현재 branch에(기준) 특정 branch를 합치기
+* git pull [원격저장소명] [받아오고자 하는 branch명] : 해당 branch의 update된 정보를 받아옴
+  * 협업의 경우 동일 branch를  여러 컴퓨터에서 사용하다보면 update 버전이 다를 수 있기에 **항상 먼저 해줘야함**
 * git push : 현재까지의 역사(commits)가 기록되어 있는 곳에 새로 생성한 커밋을 반영하기
   * git push origin master : origin이라는 이름을 가진 master branch에 push함
+  * git push -u origin master : repository에 가장 처음 push할 경우 `-u` 작성해줘야함
   * git push origin :test_branch : test_branch라는 이름을 가진 remote branch 삭제
 * git remote : 현재 프로젝트에 등록된 리모트 저장소 확인
-  * git remote -v : 리모트 저장소의 단축이름과 url확인
+  * git remote --help : git remote 옵션 도움말
+  * git remote -v : 리모트 저장소의 단축이름과 url확인(어느 위치에 저장 가능한지)
   * git remote add [단축이름] [url] : 리모트 저장소 추가
   * git remote update : 원격저장소의 정보를 업데이트(fetch)함
   * git remote remove origin : 주소를(잘못 입력했을 경우) 삭제함
@@ -141,6 +146,52 @@
 
 * `ctrl` + `l` : clear
 * `ctrl` + `c/d` : 원상복귀
+
+
+
+## 용어
+
+* **origin**
+
+  * 원격 저장소 별명
+  * 업로드하는 첫번째 저장소 이름(약속)
+
+* **issues** : 
+
+  * repository의 게시판
+  * markdown 형식으로 작성 가능
+  * close issue : 해당 이슈를 닫어서 처리된 이슈로 구분
+
+* **conflict**
+
+  * repository의 마지막 commit 상태와 내 컴퓨터의 마지막 commit 상태가 다른 경우 발생
+
+  * 동일한 commit 상태로부터 repository와 내 컴퓨터가 전부 update가 된 경우
+
+  * 수정하여 저장
+
+    ```python
+    vscode 사용시
+    
+    	Accept Current Change : 현재 내 컴퓨터에 저장된 것 대로 가겠다
+    
+    	Accept incoming Change : 원격저장소에 저장된 대로 가겠다.
+    
+    	Accept Both Changes : 둘 다 사용하겠다
+    
+    	Compare Change : 둘을 정확히 비교해보겠다.
+    ```
+
+    ```python
+    직접 수정시 아래 세 줄 삭제
+    	<<<<<<< HEAD
+    	=======
+    	>>>>>>> 8e787dab1cd8e5e9bd6ead2c93fa2f076695d76d
+    ```
+
+    
+
+
 
 
 
