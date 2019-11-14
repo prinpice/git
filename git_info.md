@@ -19,18 +19,18 @@
 
 * cat [파일 명] : 해당 파일의 문서내용 보기
 
-* cd : 폴더를 들어가거나 나오기
+* cd : 폴더를 들어가거나 나오기(change directory)
   
   * cd [폴더명] : 해당 폴더로 들어감
-  * cd .. : 뒤로가기
+  * cd .. : 상위 폴더로 이동(뒤로가기)
   * cd : 홈 디렉토리로 가기
   * cd/ : 루트 디렉토리로 가기
   
 * clear : 작성된 내용 삭제
 
-* code [위치] : 원하는 위치에서 mscode를 시작함(mscode 설치되어있을 시)
+* code [위치] : 원하는 위치에서 vscode를 시작함(vscode 설치되어있을 시)
 
-  * code . : 현재 위치에서 mscode를 실행함
+  * code . : 현재 위치에서 vscode를 실행함
 
 * cp : copy(복사)
 
@@ -60,13 +60,15 @@
     echo 'world' >> a.txt
     ```
 
+* exit : 종료(창 끄기)
+
 * ls : 목록보기(숨김파일 미포함)
 
   * ls -al : 목록보기(숨김파일 포함)
 
 * man [알아보고자 하는 명령어] : 명령어에대한 설명
 
-* mkdir : 디렉토리 만들기
+* mkdir : 디렉토리 만들기(make directory)
 
 * mv : 이름변경 또는 이동
 
@@ -146,6 +148,17 @@
 
 * `ctrl` + `l` : clear
 * `ctrl` + `c/d` : 원상복귀
+* `tab` : 자동완성
+* `ctrl` + `insert` : 복사
+* `shift` + `insert` : 붙여넣기
+
+
+
+## python 명령어
+
+* 명령어가 작동되지 않을 경우
+  * 
+* python --version : 버전확인
 
 
 
