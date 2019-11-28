@@ -22,9 +22,19 @@
 * cd : 폴더를 들어가거나 나오기(change directory)
   
   * cd [폴더명] : 해당 폴더로 들어감
+  
+    ```git
+    $ cd sns/
+    $ cd sns/templates/
+    ```
+  
   * cd .. : 상위 폴더로 이동(뒤로가기)
+  
   * cd : 홈 디렉토리로 가기
+  
   * cd/ : 루트 디렉토리로 가기
+  
+  * CD - : 이전 위치로 돌아가기
   
 * clear : 작성된 내용 삭제
 
@@ -70,6 +80,12 @@
 
 * mkdir : 디렉토리 만들기(make directory)
 
+  **directory는 컴퓨터에 영향을 많이 주지 않기 때문에 많이 만들어도 상관없음**
+
+  **컴퓨터는 한 곳에 많은 데이터가 있는것을 더 힘들어함**
+
+  * mkdir -p [폴더명]/[폴더명]/[폴더명] : 한번에 여러폴더 만들기
+
 * mv : 이름변경 또는 이동
 
   * mv [이동하고자 하는 파일명] [저장하고자 하는 폴더명] : 파일 이동
@@ -99,6 +115,18 @@
   
 * touch : 파일 만들기
 
+  * touch [파일명] [파일명]... : 파일 여러개 만들기
+
+    ```git
+    $ touch index.html home.html list.html
+    ```
+
+  * touch [폴더명]/[파일명].[확장자명] : 특정폴더에 파일 추가
+
+    ```git
+    $ touch sns/urls.py
+    ```
+
 * tree : 폴더 구조 보기
 
 
@@ -108,39 +136,66 @@
 * git add [파일/폴더명] : 커밋할 목록에 추가/ 파일이 삭제된 경우 삭제된 내용을 저장
   * git add . : 현재 폴더의 모든 내용을 추가
   * git add --update : 추적하고 있는 파일만 추가
+  
 * git branch : 모든 branch 조회
+  
   * git branch [branch명] : branch생성
+  
 * git checkout
   * git checkout [branch명] : 원하는 branch로 이동
   * git checkout -- [파일명] : 삭제된 파일 되돌리기
+  
 * git clone [주소] : 해당 주소로부터 파일 또는 폴더를 복사해서 가져옴 & 해당 주소와 연결
+
 * git commit : 커밋(create a snapshot) 만들기
   * git commit -m "[커밋메세지]" : 커밋메세지 작성
   * git commit --ament -m "[수정된 커밋 메세지]" : 커밋 메세지 수정
+  
 * git config : 환경설정
   * git config --global user.email "[이메일]" : 이메일 지정
   * git config --global user.name "[사용자 이름]" : 사용자 이름 지정
   * --global : 전역으로 사용
+  
 * git diff : 무엇을 수정했는지 확인
+
 * git init : 현재 폴더 기준으로 버전관리(선언, 초기화)
+
 * git log : 저장소의 commit history를 시간순으로 보여줌
+
 * git merge
+  
   * git merge [합치고자 하는 branch명] : 현재 branch에(기준) 특정 branch를 합치기
+  
 * git pull [원격저장소명] [받아오고자 하는 branch명] : 해당 branch의 update된 정보를 받아옴
+  
   * 협업의 경우 동일 branch를  여러 컴퓨터에서 사용하다보면 update 버전이 다를 수 있기에 **항상 먼저 해줘야함**
+  
 * git push : 현재까지의 역사(commits)가 기록되어 있는 곳에 새로 생성한 커밋을 반영하기
   * git push origin master : origin이라는 이름을 가진 master branch에 push함
   * git push -u origin master : repository에 가장 처음 push할 경우 `-u` 작성해줘야함
   * git push origin :test_branch : test_branch라는 이름을 가진 remote branch 삭제
+  
 * git remote : 현재 프로젝트에 등록된 리모트 저장소 확인
   * git remote --help : git remote 옵션 도움말
   * git remote -v : 리모트 저장소의 단축이름과 url확인(어느 위치에 저장 가능한지)
   * git remote add [단축이름] [url] : 리모트 저장소 추가
   * git remote update : 원격저장소의 정보를 업데이트(fetch)함
   * git remote remove origin : 주소를(잘못 입력했을 경우) 삭제함
+  
 * git rm --cached [파일명] : 추적 중지(add 취소) / 파일은 그대로 보존됨
+  
   * git rm [파일명] : 파일이 삭제된 경우 삭제된 것을 그대로 적용
+  * git rm -r --chached [폴더명] : git의 관리(버전관리) 끊음/ 폴더는 그대로 보존됨 / 폴더인경우 `-r`을 붙여줌
+  
 * git status : 현재상태(버전 등)
+
+* && : 두 줄의 명령어를 한번에 입력하여 사용가능함
+
+  ```git
+  $ git add . && git commit -m "commit"
+  ```
+
+  
 
 
 
