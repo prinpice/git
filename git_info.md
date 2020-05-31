@@ -147,6 +147,8 @@
   
 * git clone [주소] : 해당 주소로부터 파일 또는 폴더를 복사해서 가져옴 & 해당 주소와 연결
 
+  * git clone \[주소][변경하고자 하는 파일명] :  동일한 파일명이 있을 경우
+
 * git commit : 커밋(create a snapshot) 만들기
   * git commit -m "[커밋메세지]" : 커밋메세지 작성
   * git commit --ament -m "[수정된 커밋 메세지]" : 커밋 메세지 수정
